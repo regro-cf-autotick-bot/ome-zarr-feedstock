@@ -1,5 +1,5 @@
 {% set name = "ome-zarr" %}
-{% set version = "0.18.0" %}
+{% set version = "0.19.0" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 5cc0fc682b0c177fa32e54f4479b2436f79850a171e83ad4c6b08fec32e66cd0
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: e41305a5877d484d0711fd9de2fc922237fbf361bff228eb9d3ea27871548c2d
 
 build:
   number: 0
@@ -24,7 +24,8 @@ requirements:
     - setuptools >=77.0.3
     - setuptools-scm >=8.0
   run:
-    - ome-zarr-models >=1.6
+    - transformnd >=0.6.0,<0.8.0
+    - ome-zarr-models >=1.8.0
     - deprecated
     - rangehttpserver
     - aiohttp
